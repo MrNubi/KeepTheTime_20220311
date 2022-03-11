@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KeepTheTime_20220311">
         <activity
+            android:name=".SiginInActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
