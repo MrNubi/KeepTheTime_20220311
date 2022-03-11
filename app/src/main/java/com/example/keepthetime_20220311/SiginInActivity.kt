@@ -35,6 +35,19 @@ class SiginInActivity : BaseActivity() {
 
                     Log.d("응답확인", response.toString())
                     // 테스트용 아이디: test@test.com  / 비번: Test!123
+
+                    // Retrofit 라이브러리의 response는,  성공/실패 여부에 따라 다른 본문을 봐야함
+
+                    // 성공인지?
+                    if(response.isSuccessful){
+                        // 모든 결과가 최종 성공인 경우 (code = 200으로 내려옴)
+                        // response.body() 이용
+                    }
+                    // 실패일 때는?
+                    else{
+                        // 서버 연결은 되었는데, 로직만 실패 (로그인 비번 틀림)
+                        // response.errorBody() 활용
+                    }
                 }
 
                 override fun onFailure(call: Call<JSONObject>, t: Throwable) {
