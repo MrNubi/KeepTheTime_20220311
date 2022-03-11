@@ -18,6 +18,14 @@ class SignUpActivity : BaseActivity() {
 
     override fun SetupEvents() {
 
+        binding.btnSignUp.setOnClickListener {
+
+            val inputEmail = binding.edtEmail.text.toString()
+            val inputPw = binding.edtPassword.text.toString()
+            val inputNickname = binding.edtNickname.text.toString()
+
+            // 회원 가입 API호출 (PUT - "/user")
+        }
     }
 
     override fun setValues() {
