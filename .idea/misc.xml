@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_sigin_in.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_sigin_in.xml" value="0.33" />
+        <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_splash.xml" value="0.24947916666666667" />
       </map>
     </option>
   </component>
