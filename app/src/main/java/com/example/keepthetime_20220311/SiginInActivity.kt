@@ -1,5 +1,6 @@
 package com.example.keepthetime_20220311
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +27,12 @@ class SiginInActivity : BaseActivity() {
     }
 
     override fun SetupEvents() {
+
+        binding.btnSignUp.setOnClickListener {
+
+            val myIntent = Intent(mContext, SignUpActivity::class.java)
+            startActivity(myIntent)
+        }
 
         binding.btnLogin.setOnClickListener {
 
