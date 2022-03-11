@@ -36,7 +36,7 @@ class SignUpActivity : BaseActivity() {
                     response: Response<BasicResponse>
                 ) {
                     if(response.isSuccessful){
-                        Toast.makeText(mContext, "회원가입에 성공했습니다", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(mContext, "회원가입에 성공했습니다 ", Toast.LENGTH_SHORT).show()
                         finish()
                     }
 
