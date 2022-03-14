@@ -15,7 +15,7 @@
 <!--            android:layout_height="wrap_content"-->
 <!--            android:text="00님이 로그인 했습니다"/>-->
 
-        <TableLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/mainTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
