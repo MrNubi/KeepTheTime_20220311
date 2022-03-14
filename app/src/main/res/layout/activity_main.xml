@@ -6,8 +6,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
+        <TextView
+            android:id="@+id/txtUserNickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00님이 로그인 했습니다"/>
 
 
     </LinearLayout>
