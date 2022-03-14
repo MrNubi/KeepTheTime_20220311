@@ -3,6 +3,7 @@ package com.example.keepthetime_20220311
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.keepthetime_20220311.databinding.ActivityManageMyFriendsBinding
 import com.example.keepthetime_20220311.datas.BasicResponse
@@ -44,6 +45,16 @@ class ManageMyFriendsActivity : BaseActivity() {
         ).enqueue(object :Callback<BasicResponse>{
             override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
 
+                if(response.isSuccessful){
+                    val br = response.body()!!
+//                    Log.d("친구목록", br.data.friends.toString())
+                    // br.data.friends는 UserData 목록으로 이미내려옴
+                    // 목록의 내용물을 통째로 => mFriendList 변수의 내용물로 담자
+                    mFriendList.addAll(br.data.friends)
+
+                    // 어댑터 새로 고침
+
+                }
             }
 
             override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
