@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import com.example.keepthetime_20220311.adapters.FriendViewPagerAdapter
 import com.example.keepthetime_20220311.adapters.MyFriendAdapter
+import com.example.keepthetime_20220311.adapters.SearchedUserRecyclerAdapter
 import com.example.keepthetime_20220311.databinding.ActivityManageMyFriendsBinding
 import com.example.keepthetime_20220311.datas.BasicResponse
 import com.example.keepthetime_20220311.datas.UserData
@@ -18,6 +20,8 @@ import retrofit2.Response
 class ManageMyFriendsActivity : BaseActivity() {
 
     lateinit var binding: ActivityManageMyFriendsBinding
+
+    lateinit var  mAdapter: FriendViewPagerAdapter
 
 //    val mFriendList = ArrayList<UserData>()
 //    lateinit var mAdapter:MyFriendAdapter
@@ -40,6 +44,11 @@ class ManageMyFriendsActivity : BaseActivity() {
     }
 
     override fun setValues() {
+
+        mAdapter = FriendViewPagerAdapter(supportFragmentManager)
+        binding.friendViewPager.adapter = mAdapter
+
+        binding.friendsTabLayout.setupWithViewPager(binding.friendViewPager)
 
 //        getMyFriendListFromServer()
 //
@@ -73,4 +82,6 @@ class ManageMyFriendsActivity : BaseActivity() {
 //            }
 //        })
 //    }
+
+
 }
