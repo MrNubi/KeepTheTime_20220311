@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.keepthetime_20220311.R
+import com.example.keepthetime_20220311.adapters.MyFriendRecyclerAdapter
 import com.example.keepthetime_20220311.databinding.FragmentMyFriendsBinding
 import com.example.keepthetime_20220311.datas.BasicResponse
 import com.example.keepthetime_20220311.datas.UserData
@@ -18,6 +21,8 @@ class MyFreindsFragment :BaseFragment() {
     lateinit var binding: FragmentMyFriendsBinding
 
     val mMyFriendList =  ArrayList<UserData>()
+
+    lateinit var mFriendAdapter: MyFriendRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,6 +48,10 @@ class MyFreindsFragment :BaseFragment() {
 
     override fun setValues() {
 
+        mFriendAdapter = MyFriendRecyclerAdapter(mContext, mMyFriendList)
+        binding.myFriendRecyclerView.adapter = mFriendAdapter
+        binding.myFriendRecyclerView.layoutManager = LinearLayoutManager(mContext)
+
         getMyFriendsFromServer()
     }
 
@@ -57,6 +66,8 @@ class MyFreindsFragment :BaseFragment() {
                    mMyFriendList.clear()
 
                    mMyFriendList.addAll(br.data.friends)
+
+                   mFriendAdapter.notifyDataSetChanged()
                }
            }
 
