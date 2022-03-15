@@ -9,6 +9,8 @@ import android.widget.TimePicker
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.keepthetime_20220311.databinding.ActivityEditAppointmentBinding
+import com.naver.maps.geometry.LatLng
+import com.naver.maps.map.CameraUpdate
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -90,5 +92,19 @@ class EditAppointmentActivity : BaseActivity() {
 
     override fun setValues() {
 
+        // 네이버지도 객체 얻어오기 => 얻어와지면 할 일(interface) 코딩
+        binding.naverMapView.getMapAsync {
+
+            // 지도 로딩이 끝나고 난 후에 얻어낸 온젆나 지도 객체
+            val naverMap = it
+
+            // 지도 시작지점: 학원 위/경도
+            val coord = LatLng(37.57805217412594, 127.03384083216949)
+
+            // coord에 설정한 좌표로 -> 네이버지도의 카메라 이동
+            val cameraUpdate = CameraUpdate.scrollTo(coord)
+            naverMap.moveCamera(cameraUpdate)
+
+        }
     }
 }
