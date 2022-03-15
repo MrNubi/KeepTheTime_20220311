@@ -7,12 +7,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.keepthetime_20220311.R
 import com.example.keepthetime_20220311.api.APIList
 import com.example.keepthetime_20220311.api.ServerAPI
+import com.example.keepthetime_20220311.datas.BasicResponse
 import com.example.keepthetime_20220311.datas.UserData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SearchedUserRecyclerAdapter(
     val mContext:Context,
@@ -61,10 +66,28 @@ class SearchedUserRecyclerAdapter(
 
             // 친구 추가 버튼이 눌리면 할일 => 친구추가요청 API호출
             // 어댑터에서 => API를 호출? =>레트로픽 객체 직접 생성해서 호출
-            val retrofit = ServerAPI.getRetrofit(mContext)
-            val apiList = retrofit.create(APIList::class.java)
 
-//            apiList.
+            btnAddFriend.setOnClickListener {
+
+                val retrofit = ServerAPI.getRetrofit(mContext)
+                val apiList = retrofit.create(APIList::class.java)
+
+                apiList.postRequestAddFriend(data.id).enqueue(object :Callback<BasicResponse>{
+                    override fun onResponse(
+                        call: Call<BasicResponse>,
+                        response: Response<BasicResponse>
+                    ) {
+                        if(response.isSuccessful){
+                            Toast.makeText(mContext, "친구 요청을 보냈습니다", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
+
+                    }
+                })
+            }
+
 
         }
 
