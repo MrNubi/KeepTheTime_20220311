@@ -4,7 +4,7 @@
     <item
         android:id="@+id/myAppointment"
         android:title="내 약속목록"
-        android:icon="@drawable/clock_event_planner_stopwatch_time_icon"/>
+        android:icon="@drawable/clock_icon"/>
 
     <item
         android:id="@+id/myProfile"
