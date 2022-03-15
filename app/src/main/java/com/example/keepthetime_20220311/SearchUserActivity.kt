@@ -39,7 +39,6 @@ class SearchUserActivity : BaseActivity() {
 
 
             apiList.getRequestSearchUser(
-                ContextUtil.getLoginUserToken(mContext),
                 inputKeyword
             ).enqueue(object :Callback<BasicResponse>{
                 override fun onResponse(

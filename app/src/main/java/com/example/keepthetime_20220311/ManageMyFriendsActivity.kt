@@ -53,7 +53,6 @@ class ManageMyFriendsActivity : BaseActivity() {
         // 테스트용 아아디 test@test.com  /  비번  Test!123
 
         apiList.getRequestFriendList(
-            ContextUtil.getLoginUserToken(mContext),
             "my"    // 수락이 완료된 친구목록만 불러오기
         ).enqueue(object :Callback<BasicResponse>{
             override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {

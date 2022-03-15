@@ -30,7 +30,7 @@ class SplashActivity : BaseActivity() {
         // 실제 저장된 토근으로, 내정보 조회 시도 먼저 진행
         // 2.5초 후에, 내정보가 불러와졌는지? 결과에 따라 다른 화면으로 이동
         var isMyInfoLoaded = false
-        apiList.getRequestMyInfo(ContextUtil.getLoginUserToken(mContext)).enqueue(object :Callback<BasicResponse>{
+        apiList.getRequestMyInfo().enqueue(object :Callback<BasicResponse>{
             override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
                 // code : 200 => 성공 응답이 왔다? 내 정보가 일단 잘 불러졌다
                 if(response.isSuccessful){

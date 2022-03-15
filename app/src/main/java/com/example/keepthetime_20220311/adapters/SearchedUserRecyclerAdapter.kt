@@ -61,7 +61,7 @@ class SearchedUserRecyclerAdapter(
 
             // 친구 추가 버튼이 눌리면 할일 => 친구추가요청 API호출
             // 어댑터에서 => API를 호출? =>레트로픽 객체 직접 생성해서 호출
-            val retrofit = ServerAPI.getRetrofit()
+            val retrofit = ServerAPI.getRetrofit(mContext)
             val apiList = retrofit.create(APIList::class.java)
 
 //            apiList.
