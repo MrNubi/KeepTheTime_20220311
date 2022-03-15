@@ -19,9 +19,8 @@ class ManageMyFriendsActivity : BaseActivity() {
 
     lateinit var binding: ActivityManageMyFriendsBinding
 
-    val mFriendList = ArrayList<UserData>()
-
-    lateinit var mAdapter:MyFriendAdapter
+//    val mFriendList = ArrayList<UserData>()
+//    lateinit var mAdapter:MyFriendAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,36 +41,36 @@ class ManageMyFriendsActivity : BaseActivity() {
 
     override fun setValues() {
 
-        getMyFriendListFromServer()
-
-        mAdapter = MyFriendAdapter(mContext, R.layout.my_frined_list_item, mFriendList)
-        binding.myFriendsListView.adapter = mAdapter
+//        getMyFriendListFromServer()
+//
+//        mAdapter = MyFriendAdapter(mContext, R.layout.my_frined_list_item, mFriendList)
+//        binding.myFriendsListView.adapter = mAdapter
 
     }
 
-    fun getMyFriendListFromServer(){
-        // 테스트용 아아디 test@test.com  /  비번  Test!123
-
-        apiList.getRequestFriendList(
-            "my"    // 수락이 완료된 친구목록만 불러오기
-        ).enqueue(object :Callback<BasicResponse>{
-            override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
-
-                if(response.isSuccessful){
-                    val br = response.body()!!
-//                    Log.d("친구목록", br.data.friends.toString())
-                    // br.data.friends는 UserData 목록으로 이미내려옴
-                    // 목록의 내용물을 통째로 => mFriendList 변수의 내용물로 담자
-                    mFriendList.addAll(br.data.friends)
-
-                    // 어댑터 새로 고침
-                    mAdapter.notifyDataSetChanged()
-                }
-            }
-
-            override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
-
-            }
-        })
-    }
+//    fun getMyFriendListFromServer(){
+//        // 테스트용 아아디 test@test.com  /  비번  Test!123
+//
+//        apiList.getRequestFriendList(
+//            "my"    // 수락이 완료된 친구목록만 불러오기
+//        ).enqueue(object :Callback<BasicResponse>{
+//            override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
+//
+//                if(response.isSuccessful){
+//                    val br = response.body()!!
+////                    Log.d("친구목록", br.data.friends.toString())
+//                    // br.data.friends는 UserData 목록으로 이미내려옴
+//                    // 목록의 내용물을 통째로 => mFriendList 변수의 내용물로 담자
+//                    mFriendList.addAll(br.data.friends)
+//
+//                    // 어댑터 새로 고침
+//                    mAdapter.notifyDataSetChanged()
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
+//
+//            }
+//        })
+//    }
 }
