@@ -13,6 +13,9 @@
         android:theme="@style/Theme.KeepTheTime_20220311"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ViewMapActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditAppointmentActivity"
             android:exported="false" />
         <activity
@@ -41,11 +44,9 @@
             android:name=".MainActivity"
             android:exported="true" />
 
-
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="9dkqlmfrfg" />
-
     </application>
 
 </manifest>
