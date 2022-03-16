@@ -296,6 +296,8 @@ class EditAppointmentActivity : BaseActivity() {
                             // 완성된 정거장 경로들을  => path의 경로로 재설정. 지도에 새로 반영
                             path!!.coords = stationLatLngList
                             path!!.map = naverMap
+
+
                         }
 
                         override fun onError(p0: Int, p1: String?, p2: API?) {
