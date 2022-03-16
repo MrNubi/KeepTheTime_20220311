@@ -1,5 +1,7 @@
 package com.example.keepthetime_20220311.datas
 
+import java.util.*
+
 class AppointmentData(
     val id:Int,
     val user_id:Int,
