@@ -62,12 +62,24 @@ class AppointmentListFragment :BaseFragment(){
         binding.appointmentRecyclerView.layoutManager = LinearLayoutManager(mContext)
     }
 
+
+    override fun onResume() {
+        super.onResume()
+
+        getMyAppointmentListFromServer()
+    }
+
+
     fun getMyAppointmentListFromServer(){
 
         apiList.getRequestAppointmentList().enqueue(object :Callback<BasicResponse>{
             override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
 
                 if(response.isSuccessful){
+
+                    // 기존의 약속목록을 지우고나서  추가
+                    mAppointmentList.clear()
+
                     val br = response.body()!!
                     mAppointmentList.addAll(br.data.appointments)
 
