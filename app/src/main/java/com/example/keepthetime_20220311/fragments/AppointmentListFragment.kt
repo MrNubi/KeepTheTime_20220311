@@ -10,10 +10,17 @@ import androidx.fragment.app.Fragment
 import com.example.keepthetime_20220311.EditAppointmentActivity
 import com.example.keepthetime_20220311.R
 import com.example.keepthetime_20220311.databinding.FragmentAppointmentListBinding
+import com.example.keepthetime_20220311.datas.AppointmentData
+import com.example.keepthetime_20220311.datas.BasicResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class AppointmentListFragment :BaseFragment(){
 
     lateinit var binding:FragmentAppointmentListBinding
+
+    val mAppointmentList = ArrayList<AppointmentData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,5 +51,24 @@ class AppointmentListFragment :BaseFragment(){
 
     override fun setValues() {
 
+        getMyAppointmentListFromServer()
+    }
+
+    fun getMyAppointmentListFromServer(){
+
+        apiList.getRequestAppointmentList().enqueue(object :Callback<BasicResponse>{
+            override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
+
+                if(response.isSuccessful){
+                    val br = response.body()!!
+                    mAppointmentList.addAll(br.data.appointments)
+                }
+            }
+
+            override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
+
+            }
+
+        })
     }
 }
