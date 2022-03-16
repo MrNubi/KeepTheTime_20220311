@@ -315,6 +315,8 @@ class EditAppointmentActivity : BaseActivity() {
                             }
                             infoWindow.open(marker!!)
 
+
+                            //
                             marker!!.setOnClickListener {
 
                                 if(marker!!.infoWindow == null){
