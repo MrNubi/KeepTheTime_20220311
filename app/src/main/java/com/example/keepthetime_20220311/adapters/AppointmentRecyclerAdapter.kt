@@ -19,9 +19,15 @@ class AppointmentRecyclerAdapter(
 
     inner class MyViewHolder(view:View):RecyclerView.ViewHolder(view){
 
+        val txtTitle = view.findViewById<TextView>(R.id.txtTitle)
+        val txtDateTime = view.findViewById<TextView>(R.id.txtDateTime)
+        val txtPlaceName = view.findViewById<TextView>(R.id.txtPlaceName)
+        val ImgViewMap = view.findViewById<ImageView>(R.id.ImgViewMap)
 
         fun bind(data:AppointmentData){
 
+            txtTitle.text = data.title
+            txtPlaceName.text =data.place
         }
     }
 
