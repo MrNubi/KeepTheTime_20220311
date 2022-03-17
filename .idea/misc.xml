@@ -3,30 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/drawable/light_gray_border_box.xml" value="0.1365" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_edit_appointment.xml" value="0.25" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_main.xml" value="0.22916666666666666" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_manage_my_friends.xml" value="0.25" />
+        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_manage_my_friends.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_search_user.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_sigin_in.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_splash.xml" value="0.22916666666666666" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_view_map.xml" value="0.25" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/appointment_list_item.xml" value="0.25" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/destination_info_window.xml" value="0.228125" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_appointment_list.xml" value="0.25" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_my_friends.xml" value="0.25" />
+        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_appointment_list.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_myprofile.xml" value="0.25" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_requested_user.xml" value="0.22916666666666666" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_requested_users.xml" value="0.25" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/my_frined_list_item.xml" value="0.25" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/requested_user_list_item.xml" value="0.25" />
         <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/serached_user_list_item.xml" value="0.25" />
-        <entry key="..\:/Users/NePPPlus_014/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/menu/menu_for_main_bottom_nav.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_edit_appointment.xml" value="0.25" />
         <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_manage_place.xml" value="0.2140625" />
         <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_sigin_in.xml" value="0.33" />
         <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/activity_splash.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/nerai/AndroidStudioProjects/KeepTheTime_20220311/app/src/main/res/layout/fragment_myprofile.xml" value="0.2140625" />
       </map>
     </option>
   </component>
