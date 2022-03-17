@@ -79,7 +79,7 @@ interface APIList {
     ) :Call<BasicResponse>
 
 
-    @GET("//user/place")
+    @GET("/user/place")
     fun getRequestPlacestList(
 
     ) :Call<BasicResponse>
