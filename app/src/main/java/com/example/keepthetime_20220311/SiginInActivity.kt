@@ -12,11 +12,16 @@ import com.example.keepthetime_20220311.databinding.ActivitySiginInBinding
 import com.example.keepthetime_20220311.datas.BasicResponse
 import com.example.keepthetime_20220311.utils.ContextUtil
 import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
 import com.kakao.sdk.user.UserApiClient
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class SiginInActivity : BaseActivity() {
 
@@ -37,8 +42,27 @@ class SiginInActivity : BaseActivity() {
         binding.btnFadeLogin.setOnClickListener {
 
             // 페북 로그인 기능 실행
-            
 
+            // 1. 로그인하고 다녀오면 어떤 행동을 할지?  인터페이스 설정
+            LoginManager.getInstance().registerCallback(mCallbackManager, object :FacebookCallback<LoginResult>{
+                override fun onSuccess(result: LoginResult?) {
+
+                }
+
+                override fun onCancel() {
+
+                }
+
+                override fun onError(error: FacebookException?) {
+
+                }
+
+            })
+
+            // 2. 실제로 페북 로그인 실행
+
+            // 공개 프로필 / 이메일 주소를 받아와달라
+            LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"))
         }
 
         binding.btnKaKaoLogin.setOnClickListener {
