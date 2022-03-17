@@ -3,6 +3,8 @@ package com.example.keepthetime_20220311
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.keepthetime_20220311.adapters.MyPlacesRecyclerAdapter
 import com.example.keepthetime_20220311.databinding.ActivityManagePlaceBinding
 import com.example.keepthetime_20220311.datas.BasicResponse
 import com.example.keepthetime_20220311.datas.PlaceData
@@ -15,6 +17,8 @@ class ManagePlaceActivity : BaseActivity() {
     lateinit var binding:ActivityManagePlaceBinding
 
     val mPlaceList=ArrayList<PlaceData>()
+
+    lateinit var mPlaceAdapter: MyPlacesRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +34,9 @@ class ManagePlaceActivity : BaseActivity() {
 
     override fun setValues() {
 
+        mPlaceAdapter = MyPlacesRecyclerAdapter(mContext,mPlaceList)
+        binding.myPlaceRecyclerView.adapter = mPlaceAdapter
+        binding.myPlaceRecyclerView.layoutManager = LinearLayoutManager(mContext)
     }
 
     override fun onResume() {
@@ -49,6 +56,7 @@ class ManagePlaceActivity : BaseActivity() {
 
                     mPlaceList.addAll(br.data.places)
 
+                    mPlaceAdapter.notifyDataSetChanged()
                 }
             }
 
