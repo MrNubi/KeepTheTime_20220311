@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.keepthetime_20220311.databinding.ActivityEditMyPlaceBinding
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.overlay.Marker
+import com.naver.maps.map.overlay.OverlayImage
 
 class EditMyPlaceActivity : BaseActivity() {
 
@@ -38,6 +39,7 @@ class EditMyPlaceActivity : BaseActivity() {
                     // 처음으로 지도를 클릭 한 상황
                     // 마커를 새로 만들어주자 => 위치 정보는? latLng변수가 대입될 예정. 새로 만들 필요없다
                     marker = Marker()
+                    marker!!.icon = OverlayImage.fromResource(R.drawable.red_marker_icon)
                 }
 
                 mSelectedPoint =  latLng
