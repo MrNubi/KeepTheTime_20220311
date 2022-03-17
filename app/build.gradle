@@ -37,6 +37,7 @@ android {
 
 dependencies {
 
+    implementation "com.kakao.sdk:v2-user:2.8.6" // 카카오 로그인
     implementation files('/libs/ODsayAndroidSDK.aar')
     // 네이버 지도 SDK
     implementation 'com.naver.maps:map-sdk:3.14.0'
