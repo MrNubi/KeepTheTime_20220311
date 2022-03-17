@@ -40,6 +40,7 @@ class SiginInActivity : BaseActivity() {
                 UserApiClient.instance.loginWithKakaoTalk(mContext){token, error ->
 
                     Log.d("카카오로그인", "카톡앱으로 로그인 시도")
+                    getKaKaoUserInfo()
                 }
             }
             else{
@@ -47,6 +48,8 @@ class SiginInActivity : BaseActivity() {
                 UserApiClient.instance.loginWithKakaoAccount(mContext){token, error ->
 
                     Log.d("카카오로그인", "카톡앱 없이 로그인")
+                    Log.d("카카오로그인", "받아온 토큰: ${token.toString()}")
+                    getKaKaoUserInfo()
                 }
             }
         }
@@ -106,4 +109,16 @@ class SiginInActivity : BaseActivity() {
     override fun setValues() {
 
     }
+    
+    // 카카오 서버에서, 로그인된 계정의 정보 불러오기
+    fun getKaKaoUserInfo(){
+        
+        UserApiClient.instance.me { user, error ->
+             user?.let {
+                 Toast.makeText(mContext, "닉네임: ${it.kakaoAccount?.profile?.nickname}", Toast.LENGTH_SHORT).show()
+             }
+        }
+    }
+
+
 }
