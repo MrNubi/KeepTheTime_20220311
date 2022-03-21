@@ -1,19 +1,17 @@
 package com.example.keepthetime_20220311
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Base64
 import android.util.Log
 import com.example.keepthetime_20220311.datas.BasicResponse
 import com.example.keepthetime_20220311.utils.ContextUtil
+import com.google.firebase.messaging.FirebaseMessaging
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.security.MessageDigest
 
 class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,19 +63,15 @@ class SplashActivity : BaseActivity() {
 
         }, 2500)
 
-        getKeyHash()
+        getFCMDeviceToken()
+
     }
 
+    fun getFCMDeviceToken(){
 
-    fun getKeyHash(){
-        val info = packageManager.getPackageInfo(
-            "com.example.keepthetime_20220311",
-            PackageManager.GET_SIGNATURES
-        )
-        for (signature in info.signatures) {
-            val md: MessageDigest = MessageDigest.getInstance("SHA")
-            md.update(signature.toByteArray())
-            Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT))
+        FirebaseMessaging.getInstance().token.addOnCompleteListener {
+
+            Log.d("토큰값",it.result!!)
         }
     }
 }
