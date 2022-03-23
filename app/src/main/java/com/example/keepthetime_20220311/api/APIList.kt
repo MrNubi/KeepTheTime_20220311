@@ -1,6 +1,7 @@
 package com.example.keepthetime_20220311.api
 
 import com.example.keepthetime_20220311.datas.BasicResponse
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -103,4 +104,13 @@ interface APIList {
         @Field("uid") uid:String,
         @Field("nick_name") nickname: String,
     ) : Call<BasicResponse>
+
+
+    // 프로필 사진을 첨부 => 파라미터에 파일이 있다면: Field대신, Multiart활용
+    @Multipart
+    @PUT("/user/image")
+    fun putRequestProfileImg(
+        @Part img: MultipartBody.Part
+    ):Call<BasicResponse>
+
 }
